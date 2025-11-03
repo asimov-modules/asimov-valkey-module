@@ -39,6 +39,7 @@ clientele = { version = "0.3.8", default-features = false, features = [
   "std",
 ], optional = true }
 redis = "0.32"
+serde_json = "1.0.141"
 
 [profile.release]
 opt-level = "z"
@@ -48,4 +49,9 @@ lto = "thin"
 [[bin]]
 name = "asimov-valkey-cataloger"
 path = "src/cataloger/main.rs"
+required-features = ["cli"]
+
+[[bin]]
+name = "asimov-valkey-reader"
+path = "src/reader/main.rs"
 required-features = ["cli"]

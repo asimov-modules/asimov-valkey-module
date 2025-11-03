@@ -70,6 +70,7 @@ dependencies = [
  "clap",
  "clientele",
  "redis",
+ "serde_json",
 ]
 
 [[package]]
