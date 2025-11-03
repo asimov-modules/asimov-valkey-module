@@ -55,3 +55,8 @@ required-features = ["cli"]
 name = "asimov-valkey-reader"
 path = "src/reader/main.rs"
 required-features = ["cli"]
+
+[[bin]]
+name = "asimov-valkey-writer"
+path = "src/writer/main.rs"
+required-features = ["cli"]
