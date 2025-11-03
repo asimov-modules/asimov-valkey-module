@@ -4,21 +4,22 @@
 compile_error!("asimov-valkey-cataloger requires the 'std' feature");
 
 use asimov_module::SysexitsError::{self, *};
+use asimov_module::getenv;
 use clap::{Parser, ValueEnum};
 use clientele::StandardOptions;
 use redis::Commands as _;
 use std::error::Error;
 use std::io::{self, Write};
-use asimov_module::getenv;
 
 /// asimov-valkey-cataloger
 #[derive(Debug, Parser)]
+#[command(about = "Scan and output Valkey resources")]
 struct Options {
     #[clap(flatten)]
     flags: StandardOptions,
 
     /// Specify the output format [jsonl, url]
-    #[arg(short, long, value_enum, default_value_t = Output::Jsonl)]
+    #[arg(value_name = "FORMAT", short, long, value_enum, default_value_t = Output::Jsonl)]
     output: Output,
 }
 
@@ -58,8 +59,7 @@ pub fn main() -> Result<SysexitsError, Box<dyn Error>> {
     #[cfg(feature = "tracing")]
     asimov_module::init_tracing_subscriber(&options.flags).expect("failed to initialize logging");
 
-    let db_url = getenv::var("ASIMOV_VALKEY_URL")
-        .unwrap_or("redis://localhost:6379/0".into());
+    let db_url = getenv::var("ASIMOV_VALKEY_URL").unwrap_or("redis://localhost:6379/0".into());
 
     let client = redis::Client::open(db_url)?;
     let mut conn = client.get_connection()?;
@@ -89,7 +89,7 @@ pub fn main() -> Result<SysexitsError, Box<dyn Error>> {
                     } else {
                         continue;
                     }
-                }
+                },
             };
 
             if let Err(e) = stdout

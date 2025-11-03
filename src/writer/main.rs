@@ -3,13 +3,13 @@
 #[cfg(not(feature = "std"))]
 compile_error!("asimov-valkey-writer requires the 'std' feature");
 
-use std::error::Error;
-use clap::Parser;
-use redis::Commands as _;
-use std::io::{self, BufRead};
 use asimov_module::SysexitsError::{self, *};
 use asimov_module::getenv;
+use clap::Parser;
 use clientele::StandardOptions;
+use redis::Commands as _;
+use std::error::Error;
+use std::io::{self, BufRead};
 
 /// asimov-valkey-writer
 #[derive(Debug, Parser)]
@@ -76,7 +76,7 @@ pub fn main() -> Result<SysexitsError, Box<dyn Error>> {
                     io::Write::write_all(&mut io::stdout(), input_msg.as_bytes())?;
                     io::Write::write_all(&mut io::stdout(), b"\n")?;
                 }
-            }
+            },
         }
     }
 

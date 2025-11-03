@@ -14,6 +14,7 @@ use std::io::{self, Write};
 /// asimov-valkey-reader
 #[derive(Debug, Parser)]
 #[command(about = "Subscribe to Valkey channels")]
+#[command(arg_required_else_help = true)]
 struct Options {
     #[clap(flatten)]
     flags: StandardOptions,
@@ -92,11 +93,11 @@ pub fn main() -> Result<SysexitsError, Box<dyn Error>> {
                             serde_json::Value::String(s) => s.clone(),
                             other => other.to_string(),
                         }
-                    }
+                    },
                     Err(_) => {
                         eprintln!("Ignored invalid input: {}", input_msg);
                         return ControlFlow::Continue;
-                    }
+                    },
                 },
                 Output::Jsonl => input_msg,
             };
