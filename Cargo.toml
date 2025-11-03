@@ -1,16 +1,16 @@
 # See: https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [package]
-name = "asimov-template-module"
-version = "0.0.0"
+name = "asimov-valkey-module"
+version = "0.1.0"
 authors = ["ASIMOV Community"]
 edition = "2024"
 #rust-version = "1.85"
 description = "ASIMOV module."
-#documentation = "https://docs.rs/asimov-template-module"
+#documentation = "https://docs.rs/asimov-valkey-module"
 readme = true
 homepage = "https://github.com/asimov-modules"
-repository = "https://github.com/asimov-modules/asimov-template-module"
+repository = "https://github.com/asimov-modules/asimov-valkey-module"
 license = "Unlicense"
 keywords = ["asimov-module", "asimov", "ai"]
 categories = ["command-line-utilities", "text-processing"]              # TODO
@@ -38,6 +38,7 @@ clientele = { version = "0.3.8", default-features = false, features = [
   "clap",
   "std",
 ], optional = true }
+redis = "0.32"
 
 [profile.release]
 opt-level = "z"
@@ -45,6 +46,6 @@ strip = true
 lto = "thin"
 
 [[bin]]
-name = "asimov-template-emitter"
-path = "src/emitter/main.rs"
+name = "asimov-valkey-cataloger"
+path = "src/cataloger/main.rs"
 required-features = ["cli"]
