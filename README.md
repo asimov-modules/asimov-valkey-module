@@ -1,8 +1,8 @@
 # ASIMOV Valkey Module
 
 [![License](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](https://unlicense.org)
-[![Crates.io](https://img.shields.io/crates/v/asimov-valkey-module.svg)](https://crates.io/crates/asimov-valkey-module)
-[![Docs.rs](https://docs.rs/asimov-valkey-module/badge.svg)](https://docs.rs/asimov-valkey-module)
+[![Package on Crates.io](https://img.shields.io/crates/v/asimov-valkey-module)](https://crates.io/crates/asimov-valkey-module)
+[![Documentation](https://docs.rs/asimov-valkey-module/badge.svg)](https://docs.rs/asimov-valkey-module)
 
 [ASIMOV] module for [Valkey] / [Redis] database integration.
 
