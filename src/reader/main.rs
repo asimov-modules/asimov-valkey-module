@@ -14,7 +14,6 @@ use std::io::{self, Write};
 /// asimov-valkey-reader
 #[derive(Debug, Parser)]
 #[command(about = "Subscribe to Valkey channels")]
-#[command(arg_required_else_help = true)]
 struct Options {
     #[clap(flatten)]
     flags: StandardOptions,
