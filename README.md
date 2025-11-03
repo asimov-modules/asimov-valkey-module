@@ -11,7 +11,7 @@
 - Connects to Valkey or Redis instances via [`redis`] crate
 - Scans, reads, and writes keys, values, and Pub/Sub messages
 - Supports `.env` configuration with [ASIMOV Module] utilities
-- CLI interface consistent with all ASIMOV ecosystem modules
+- CLI interface consistent with all [ASIMOV] ecosystem modules
 - Distributed as static binaries with zero runtime dependencies
 
 ## 🛠️ Prerequisites
@@ -161,6 +161,7 @@ git clone https://github.com/asimov-modules/asimov-valkey-module.git
 
 [ASIMOV]: https://asimov.sh
 [ASIMOV CLI]: https://cli.asimov.sh
+[ASIMOV Module]: https://asimov.sh/#modules
 [Rust]: https://rust-lang.org
 [Valkey]: https://valkey.io
 [Redis]: https://redis.io
