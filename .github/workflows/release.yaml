@@ -20,3 +20,9 @@ jobs:
       update_homebrew_tap: true
       update_scoop_bucket: true
       tweet_release: true
+      brew_macos_x86_dependencies: |
+        # https://github.com/actions/runner-images/issues/9966
+        brew list -1 | grep python@ | while read formula; do
+            brew unlink $formula
+            brew link --overwrite $formula
+        done
