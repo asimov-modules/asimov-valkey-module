@@ -13,8 +13,8 @@ homepage = "https://github.com/asimov-modules"
 repository = "https://github.com/asimov-modules/asimov-valkey-module"
 license = "Unlicense"
 keywords = ["asimov-module", "asimov", "ai"]
-categories = ["command-line-utilities", "text-processing"]              # TODO
-publish = false
+categories = ["command-line-utilities", "text-processing"]            # TODO
+publish = true
 
 [features]
 default = ["all", "cli", "std"]
