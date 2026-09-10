@@ -47,8 +47,8 @@ strip = true
 lto = "thin"
 
 [[bin]]
-name = "asimov-valkey-cataloger"
-path = "src/cataloger/main.rs"
+name = "asimov-valkey-lister"
+path = "src/lister/main.rs"
 required-features = ["cli"]
 
 [[bin]]

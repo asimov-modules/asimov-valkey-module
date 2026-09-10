@@ -1,7 +1,7 @@
 // This is free and unencumbered software released into the public domain.
 
 #[cfg(not(feature = "std"))]
-compile_error!("asimov-valkey-cataloger requires the 'std' feature");
+compile_error!("asimov-valkey-lister requires the 'std' feature");
 
 use asimov_module::SysexitsError::{self, *};
 use asimov_module::getenv;
@@ -11,7 +11,7 @@ use redis::Commands as _;
 use std::error::Error;
 use std::io::{self, Write};
 
-/// asimov-valkey-cataloger
+/// asimov-valkey-lister
 #[derive(Debug, Parser)]
 #[command(about = "Scan and output Valkey resources")]
 struct Options {

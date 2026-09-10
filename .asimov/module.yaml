@@ -3,14 +3,14 @@
 name: valkey
 label: Valkey
 title: ASIMOV Valkey Module
-summary: Valkey and Redis integration for data cataloging, publishing, and subscribing.
+summary: Valkey and Redis integration for data listing, publishing, and subscribing.
 links:
   - https://github.com/asimov-modules/asimov-valkey-module
   - https://crates.io/crates/asimov-valkey-module
 
 provides:
   programs:
-    - asimov-valkey-cataloger
+    - asimov-valkey-lister
     - asimov-valkey-reader
     - asimov-valkey-writer
 

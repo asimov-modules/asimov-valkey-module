@@ -35,15 +35,15 @@ cargo install asimov-valkey-module
 
 ## 👉 Examples
 
-### 🔍 Listing Keys and Values (Cataloger)
+### 🔍 Listing Keys and Values (Lister)
 List keys or JSON values stored in Valkey.
 
 ```bash
 # Output stored values (JSONL)
-asimov-valkey-cataloger --output jsonl
+asimov-valkey-lister --output jsonl
 
 # Output only keys / URLs
-asimov-valkey-cataloger --output url
+asimov-valkey-lister --output url
 ```
 
 ### 📡 Subscribing to Channels (Reader)
@@ -83,7 +83,7 @@ ASIMOV_VALKEY_URL=redis://127.0.0.1:6379/1
 
 #### Example inline:
 ```bash
-ASIMOV_VALKEY_URL="redis://127.0.0.1:6379/1" asimov-valkey-cataloger
+ASIMOV_VALKEY_URL="redis://127.0.0.1:6379/1" asimov-valkey-lister
 ```
 
 ## 📚 Reference
@@ -92,15 +92,15 @@ ASIMOV_VALKEY_URL="redis://127.0.0.1:6379/1" asimov-valkey-cataloger
 
 | Binary                    | Description                                       |
 |:--------------------------|:--------------------------------------------------|
-| `asimov-valkey-cataloger` | Scans Valkey and prints stored keys or values     |
+| `asimov-valkey-lister` | Scans Valkey and prints stored keys or values     |
 | `asimov-valkey-reader`    | Subscribes to Valkey channels and prints messages |
 | `asimov-valkey-writer`    | Publishes messages from stdin to Valkey channels  |
 
 
-### `asimov-valkey-cataloger`
+### `asimov-valkey-lister`
 
 ```
-Usage: asimov-valkey-cataloger [OPTIONS]
+Usage: asimov-valkey-lister [OPTIONS]
 
 Options:
   -d, --debug            Enable debugging output
